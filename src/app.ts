@@ -8,11 +8,17 @@ app.set("port", process.env.PORT || 3000);
 
 app.use(bodyParser.json());
 
+
 app.get('/employees', employeesControllers.allEmployees);
 app.get('/employees/:id', employeesControllers.getEmploye);
 app.put('/employees', employeesControllers.addEmploye);
 app.delete('/employees/:id', employeesControllers.deleteEmploye);
 app.post('/employees/:id', employeesControllers.updateEmploye);
+
+
+app.get('/', (req, res) => {
+  return res.json({ hello: 'Olá Mundo' });
+}); 
 
 const server = app.listen(app.get("port"), () => {
 

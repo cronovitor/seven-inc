@@ -25,7 +25,7 @@ export let allEmployees = (req: Request, res: Response) => {
 
 export let getEmploye = (req: Request, res: Response) => {
 
-  employees.findById(req.params.id, (err: any, book: any) => {
+  employees.findById(req.params.id, (err: any, employee: any) => {
 
     if(err){
 
